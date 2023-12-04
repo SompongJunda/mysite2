@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>W3.CSS Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  </head>
+  <body>
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+      <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+        <a href="#home" class="w3-bar-item w3-button"><b>BR</b> Architects</a>
+        <!-- Float links to the right. Hide them on small screens -->
+        <div class="w3-right w3-hide-small">
+          <a href="index.html" class="w3-bar-item w3-button">index</a>
+          <a href="java.html" class="w3-bar-item w3-button">java</a>
+          <a href="api.html" class="w3-bar-item w3-button">api</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page content -->
+    <div class="w3-content w3-padding" style="max-width: 1564px">
+      <body>
+        <!-- Navbar (sit on top) -->
+        <div class="w3-top">
+          <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+            <a href="#home" class="w3-bar-item w3-button"
+              ><b>BR</b> Architects</a
+            >
+            <!-- Float links to the right. Hide them on small screens -->
+            <div class="w3-right w3-hide-small">
+              <a href="index.html" class="w3-bar-item w3-button">index</a>
+              <a href="java.html" class="w3-bar-item w3-button">java</a>
+              <a href="api.html" class="w3-bar-item w3-button">api</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Page content -->
+        <div class="w3-content w3-padding" style="max-width: 1564px">
+          <div class="w3-container w3-margin-top w3-padding-64">
+            <h1>The Document Object</h1>
+            <h2>The get ElementById() Method</h2>
+            <br />
+            <hr />
+            <br />
+            <p id="demo">All characters are printed!</p>
+            <br />
+            <hr />
+            <br />
+            <p id="demo2">Hi</p>
+            <button onclick="changeChar()">Click Change</button>
+            <br />
+            <hr />
+            <br />
+            <form>
+              <label for="x">แกน X</label>
+              <input id="x" type="number" />
+              <label for="y">แกน Y</label>
+              <input id="y" type="number" />
+            </form>
+            <button onclick="square()">Cal</button>
+            <p id="answer"></p>
+          </div>
+          <br />
+          <hr />
+          <br />
+          <label for="point">กรอกคะแนนของคุณ</label>
+          <input type="number" id="point" />
+          <button onclick="calculateGrade()">My Score</button>
+          <p id="overall">F</p>
+
+          <!-- End page content -->
+        </div>
+        <!-- Footer -->
+        <footer class="w3-center w3-black w3-padding-16">
+          <p>
+            Powered by
+            <a
+              href="https://www.w3schools.com/w3css/default.asp"
+              title="W3.CSS"
+              target="_blank"
+              class="w3-hover-text-green"
+              >w3.css</a
+            >
+          </p>
+        </footer>
+
+        <script>
+          function printAlphabetWithDelay(callback) {
+            let currentCharCode = 65; // ASCII code for 'A'
+            function printNextChar() {
+              const char = String.fromCharCode(currentCharCode);
+              document.getElementById("demo").innerHTML = char;
+              currentCharCode++;
+              if (currentCharCode <= 90) {
+                setTimeout(printNextChar, 1000);
+              } else {
+                callback();
+              }
+            }
+            printNextChar();
+          }
+          function onComplete() {
+            document.getElementById("demo").innerHTML =
+              "All characters are printed!";
+          }
+          printAlphabetWithDelay(onComplete);
+
+          function changeChar() {
+            document.getElementById("demo2").innerHTML = "Hello";
+          }
+
+          function square() {
+            var x = document.getElementById("x").value;
+            var y = document.getElementById("y").value;
+
+            document.getElementById("answer").innerText = x * y;
+          }
+
+          function calculateGrade() {
+            let point = document.getElementById("point").value;
+
+            if (point >= 80) document.getElementById("overall").innerText = "A";
+            else if (point >= 70 && point < 80)
+              document.getElementById("overall").innerText = "B";
+            else if (point >= 60 && point < 70)
+              document.getElementById("overall").innerText = "C";
+            else if (point >= 50 && point < 60)
+              document.getElementById("overall").innerText = "D";
+            else document.getElementById("overall").innerText = "F";
+          }
+        </script>
+      </body>
+
+      <!-- End page content -->
+    </div>
+    <!-- Footer -->
+    <footer class="w3-center w3-black w3-padding-16">
+      <p>
+        Powered by
+        <a
+          href="https://www.w3schools.com/w3css/default.asp"
+          title="W3.CSS"
+          target="_blank"
+          class="w3-hover-text-green"
+          >w3.css</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>
